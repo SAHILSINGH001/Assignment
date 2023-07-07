@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import "./scss/index.scss";
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import LoginPage from './componenets/LoginPage';
+import ForgetPassword from './componenets/ForgetPassword'
+import MultiForm from './componenets/MultiForm'
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <BrowserRouter>
+    <Routes>
+      <Route exact path='/' element={<LoginPage/>}/>
+      <Route exact path='/forgetpassword' element={<ForgetPassword/>}/>
+      <Route exact path='/multiform' element={<MultiForm/>}/>
 
-export default App;
+      
+    </Routes>
+   </BrowserRouter>
+  )
+}
